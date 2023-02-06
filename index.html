@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Locco</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/2_character_pepe/1_idle/idle/I-1.png">
+
+
+
+    <script src="./js/models/world.class.js"></script>
+    <script src="./js/models/drawable-object.class.js"></script>
+    <script src="./js/models/movable-objekt.class.js"></script>
+    <script src="./js/models/set-bottle.class.js"></script>
+    <script src="./js/models/set-coin.class.js"></script>
+    <script src="./js/models/background-objekt.class.js"></script>
+    <script src="./js/models/cloud.class.js"></script>
+    <script src="./js/models/character.class.js"></script>
+    <script src="./js/models/chicken.class.js"></script>
+    <script src="./js/models/chick.class.js"></script>
+    <script src="./js/models/endboss.class.js "></script>
+    <script src="./js/models/keyboard.class.js"></script>
+    <script src="./js/models/level.class.js"></script>
+    <script src="./js/models/level1.class.js"></script>
+    <script src="./js/models/level2.class.js"></script>
+    <script src="./js/models/level3.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./levels/level2.js"></script>
+    <script src="./levels/level3.js"></script>
+    <script src="./js/models/status-bar.class.js"></script>
+    <script src="./js/models/status-bar-health.class.js"></script>
+    <script src="./js/models/status-bar-coin.class.js"></script>
+    <script src="./js/models/status-bar-bottle.class.js"></script>
+    <script src="./js/models/throwable-object.class.js"></script>
+    <script src="./js/models/status-bar-health-endboss.class.js"></script>
+    <script src="./js/models/audio.js"></script>
+
+
+    <script src="./script.js"></script>
+    <script src="./js/game.js"></script>
+
+</head>
+
+<body onload="howIsInnerSize()">
+    <h1 id="headline">El pollo loco</h1>
+    <img class="background_img" src="./img/background-image-canvas.png" alt="">
+    <div id="div-canvas" class="div_canvas">
+        <div id="start-screen" class="start_screen">
+            <img class="start_screen_img" src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+            <div class="settings">
+                <div onclick="soundOffOrOn()"><img id="sound-icon" src="img/icons/audio-remove.png" alt=""></div>
+                <div onclick="openDescription()"><img src="img/icons/joystick.png" alt=""></div>
+                <div id="start-screen-fullscreen" onclick="fullscreenOrNot()"><img id="start-screen-fullscreen-img" src="./img/icons/fullscreen.png" alt="">
+                </div>
+            </div>
+            <div id="start-game-button" class="start_game_button" onclick="startGame()">Start</div>
+        </div>
+        <div id="game-screen" class="game_screen" style="display: none;">
+            <div class="settings">
+                <div onclick="soundOffOrOn()"><img id="sound-icon-game" src="img/icons/audio-remove.png" alt=""></div>
+                <div onclick="openDescription()"><img src="img/icons/joystick.png" alt=""></div>
+                <div id="game-screen-fullscreen" onclick="fullscreenOrNot()"><img id="game-screen-fullscreen-img" src="./img/icons/fullscreen.png" alt="">
+                </div>
+            </div>
+            <div id="button-mobile" class="button_mobile" style="display: none;">
+                <div>
+                    <img ontouchstart="walkLeftMobile()" ontouchend="stopWalkingmobile()"
+                        src="./img/icons/walk-left.png" alt="">
+                    <img ontouchstart="walkRightMobile()" ontouchend="stopWalkingmobile()"
+                        src="./img/icons/walk-right.png" alt="">
+                </div>
+                <div>
+                    <img ontouchstart="jumpMobile()" ontouchend="stopJumpingMobile()" src="./img/icons/jump.png" alt="">
+                    <img ontouchstart="throwBottleStartMobile()" ontouchend="throwBottleEndMobile()"
+                        src="./img/icons/bottle.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="description" class="description" style="display: none">
+            <img class="description_img" src="./img/background-image-description.png" alt="">
+            <div id="close-description" class="close_description" onclick="closeDescription()">X</div>
+            <div class="decription_div">
+                <span>
+                    Description:
+                </span>
+                <div>
+                    <div>Left</div>
+                    <div class="discription_img"><img src="./img/icons/left.png" alt=""></div>
+                    <div>or</div>
+                    <div>A</div>
+                </div>
+                <div>
+                    <div>Right</div>
+                    <div class="discription_img"><img src="./img/icons/right.png" alt=""></div>
+                    <div>or</div>
+                    <div>D</div>
+                </div>
+                <div>
+                    <div>Jump</div>
+                    <div class="discription_img"><img src="./img/icons/up.png" alt=""></div>
+                    <div>or</div>
+                    <div>Space</div>
+                </div>
+                <div>
+                    <div>Throw Bottle</div>
+                    <div>E</div>
+                </div>
+            </div>
+        </div>
+        <div id="end-screen" class="end_screen" style="display: none;">
+        </div>
+        <div id="turn-mobile" class="turn_mobile" style="display: none">
+            <div class="turn_mobile_content"> 
+                <img src="./img/icons/turn-mobile.png" alt="">
+                <span>Turn your Mobile</span>
+            </div>
+
+        </div>
+        <canvas id="canvas" width="720px" height="480px"> </canvas>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+const level2 = new Level2('loadEnemies');
