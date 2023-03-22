@@ -79,10 +79,10 @@
                 </div>
             </div>
         </div>
-        <div id="description" class="description" style="display: none">
+        <div id="description" class="description" style="display: none" onclick="closeDescription()">
             <img class="description_img" src="./img/background-image-description.png" alt="">
-            <div id="close-description" class="close_description" onclick="closeDescription()">X</div>
-            <div class="decription_div">
+            <div id="close-description" class="close_description">X</div>
+            <div class="decription_div" onclick="stopPropagation(event)">
                 <span>
                     Description:
                 </span>

@@ -258,3 +258,12 @@ function closeFullScreenWithEsc() {
         }
     }, 1000 / 60);
 }
+
+
+/**
+ * stop function in this div
+ * @param {*} event 
+ */
+function stopPropagation(event){
+    event.stopPropagation();
+}
